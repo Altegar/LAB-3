@@ -13,7 +13,6 @@ headers = ["Задача", "Результат"]
 # Завдання №1
 myList = [randint(1, 20) for i in range(10)]
 myListTest = [randint(1, 20) for j in range(10)]
-print(myList)
 data1 = [
     ["Невідсортований список:", str(myList)],
     ["Максимальний елемент списку:", max(myList)],
