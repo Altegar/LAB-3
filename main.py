@@ -3,7 +3,7 @@
 # Числові списки. Сортування
 
 import funcs_module as fm
-from numpy import amax, matrix, transpose
+from numpy import amax, array, transpose
 from random import randint
 from tabulate import tabulate
 
@@ -30,9 +30,9 @@ squareMatrix = [
     [6, 3, 8]
 ]
 data2 = [
-    ["Задана матриця:", matrix(squareMatrix)],
+    ["Задана матриця:", array(squareMatrix)],
     ["Матриця з поміняними місцями макс. та мін. елементами:", fm.swap_max_min(squareMatrix)],
-    ["Сума діагональних елементів:", fm.sum_diag_elem(squareMatrix)],
+    ["Сума діагональних елементів:", fm.sum_diag_elems(squareMatrix)],
     ["Матриця з поміняними місцями діагоналями:", fm.swap_diagonals(squareMatrix)],
     ["Максимальний елемент кожного стовпця:", amax(squareMatrix, axis=0)],
     ["Матриця з поміняними місцями першим і останнім рядками:", fm.swap_rows(squareMatrix)],
