@@ -11,19 +11,20 @@ def bubble_sort(lst: list) -> list:
 
     Returns:
     --------
-        list: відсортований список
+        list: новий відсортований список
 
     Examples:
     ---------
     >>> fm.bubble_sort([6, 4, 1, 3, 8, 5, 2, 7, 9])
     [1, 2, 3, 5, 6, 7, 8, 9]
     """
-    for num in range(len(lst) - 1, 0, -1):
+    new_lst = lst[:]
+    for num in range(len(new_lst) - 1, 0, -1):
         for j in range(num):
-            if lst[j] > lst[j + 1]:
-                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+            if new_lst[j] > new_lst[j + 1]:
+                new_lst[j], new_lst[j + 1] = new_lst[j + 1], new_lst[j]
 
-    return lst
+    return new_lst
 
 
 def swap_max_min(lst: list) -> ndarray:

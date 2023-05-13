@@ -11,13 +11,14 @@ from tabulate import tabulate
 headers = ["Задача", "Результат"]
 
 # Завдання №1
-myList = [randint(1, 20) for i in range(10)]
-myListTest = [randint(1, 20) for j in range(10)]
+orig_list = [randint(1, 20) for i in range(10)]
+sorted_list = fm.bubble_sort(orig_list)
 data1 = [
-    ["Невідсортований список:", str(myList)],
-    ["Максимальний елемент списку:", max(myList)],
-    ["Відсортований список:", fm.bubble_sort(myList)],
-    ["Перевірка сортування:", sorted(myListTest)]
+    ["Невідсортований список:", str(orig_list)],
+    ["Максимальний елемент списку:", max(orig_list)],
+    ["Відсортований список:", sorted_list],
+    ["Перевірка сортування (невідсортований список):", str(orig_list)],
+    ["Перевірка сортування (відсортований список):", sorted(orig_list)]
 ]
 
 table = tabulate(data1, headers, tablefmt="fancy_grid")
