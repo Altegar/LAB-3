@@ -3,7 +3,7 @@ from numpy import array, fliplr, ndarray, trace, unravel_index
 
 def bubble_sort(lst: list) -> list:
     """
-    Сортує переданий список методом бульбашки на місці.
+    Сортує переданий список методом бульбашки та повертає новий відсортований список.
 
     Parameters:
     -----------
@@ -16,13 +16,41 @@ def bubble_sort(lst: list) -> list:
     Examples:
     ---------
     >>> fm.bubble_sort([6, 4, 1, 3, 8, 5, 2, 7, 9])
-    [1, 2, 3, 5, 6, 7, 8, 9]
+    [1, 2, 3, 4, 5, 6, 7, 8, 9]
     """
     new_lst = lst[:]
     for num in range(len(new_lst) - 1, 0, -1):
         for j in range(num):
             if new_lst[j] > new_lst[j + 1]:
                 new_lst[j], new_lst[j + 1] = new_lst[j + 1], new_lst[j]
+
+    return new_lst
+
+
+def max_value_sort(lst: list) -> list:
+    """
+    Сортує переданий список методом максимального елемента та повертає новий відсортований список.
+
+    Parameters:
+    -----------
+        lst (list): список
+
+    Returns:
+    --------
+        list: новий відсортований список
+
+    Examples:
+    ---------
+    >>> fm.max_value_sort([6, 4, 1, 3, 8, 5, 2, 7, 9])
+    [9, 8, 7, 6, 5, 4, 3, 2, 1]
+    """
+    new_lst = lst[:]
+    for i in range(len(new_lst) - 1):
+        max_index = i
+        for j in range(i + 1, len(new_lst)):
+            if new_lst[j] > new_lst[max_index]:
+                max_index = j
+        new_lst[i], new_lst[max_index] = new_lst[max_index], new_lst[i]
 
     return new_lst
 
